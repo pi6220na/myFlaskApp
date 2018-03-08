@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Dialog - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+
+    $( "#dialog" ).dialog({
+        minWidth: 300,
+        minHeight: 300,
+        width: 400,
+        height: 400
+    });
+
+  } );
+  </script>
+</head>
+<body>
+
+<form action="/weather" method="post">
+    <button name="weatherBtn" type="submit">Show Weather</button>
+</form>
+
+<br>
+
+<form action="/radar" method="post">
+    <button name="radarBtn" type="submit">Show Radar</button>
+</form>
+
+<br>
+
+<div id="dialog" title="Simple Radar for {{ location }}" onclose="window.history.back()" style="min-width: 240px; min-height: 240px; max-height: none; height: auto; ">
+    <img src="http://api.wunderground.com/api/b27dbdfdaafdef52/animatedradar/q/MN/Minneapolis.gif?newmaps=1&timelabel=1&timelabel.y=10&num=5&delay=50">
+</div>
+
+
+
+</body>
+</html>
